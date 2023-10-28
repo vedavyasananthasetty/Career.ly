@@ -1,0 +1,17 @@
+<h1>Job Titles and Salaries</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= job.title %></td>
+        <td><%= job.salary %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

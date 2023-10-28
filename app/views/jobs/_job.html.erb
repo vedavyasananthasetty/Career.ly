@@ -1,0 +1,30 @@
+<div id="<%= dom_id job %>" class="job-container">
+  <p>
+    <strong><%= job.title %></strong>
+    
+  </p>
+
+  <p>
+    <strong><%= job.company %></strong>
+    
+  </p>
+
+  <p>
+    <strong><%= job.location %></strong>
+    
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= job.description %>
+  </p>
+
+  <p>
+    <strong>Salary:</strong>
+    <%= job.salary %>
+  </p>
+    <p>
+      <%= link_to "", job, class:"job-link" %>
+    </p>
+
+</div>

@@ -1,0 +1,67 @@
+<br>
+<div class="col-xl-4 col-md-6 col-sm-8 col-10" style="margin:auto; background-image: linear-gradient(to right, #ff9966, #ff5e62); border-radius: 6px; padding:15px; margin-top:20px;">
+
+<%= form_with(model: job) do |form| %>
+  
+  <h1>Post a New Job</h1>
+
+  <div>
+  <% invalid = job.errors.include?(:title)%>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title, class: "form-control" %>
+    <% if invalid %>
+    <p style="color:red;">
+    <%= job.errors.full_messages_for(:title).join(" ,")%>
+    </p>
+    <%end%>
+  </div>
+
+  <div>
+  <% invalid = job.errors.include?(:company)%>
+    <%= form.label :company, style: "display: block" %>
+    <%= form.text_field :company, class: "form-control" %>
+    <% if invalid %>
+    <p style="color:red;">
+    <%= job.errors.full_messages_for(:company).join(" ,")%>
+    </p>
+    <%end%>
+  </div>
+
+  <div>
+  <% invalid = job.errors.include?(:location)%>
+    <%= form.label :location, style: "display: block" %>
+    <%= form.text_field :location, class: "form-control" %>
+    <% if invalid %>
+    <p style="color:red;">
+    <%= job.errors.full_messages_for(:location).join(" ,")%>
+    </p>
+    <%end%>
+  </div>
+
+  <div>
+  <% invalid = job.errors.include?(:description)%>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description, class: "form-control" %>
+    <% if invalid %>
+    <p style="color:red;">
+    <%= job.errors.full_messages_for(:description).join(" ,")%>
+    </p>
+    <%end%>
+  </div>
+
+  <div>
+  <% invalid = job.errors.include?(:salary)%>
+    <%= form.label :salary, style: "display: block" %>
+    <%= form.number_field :salary, class: "form-control" %>
+    <% if invalid %>
+    <p style="color:red;">
+    <%= job.errors.full_messages_for(:salary).join(" ,")%>
+    </p>
+    <%end%>
+  </div>
+
+  <div>
+    <%= form.submit class:"btn btn-primary col-12"%>
+  </div>
+<% end %>
+</div>

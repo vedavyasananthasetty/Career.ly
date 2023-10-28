@@ -1,0 +1,21 @@
+<%= stylesheet_link_tag("job") %>
+<h1>Jobs</h1>
+<div class='search'>
+<%= form_tag(jobs_path, method: "get") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search by title..." %>
+  <%= submit_tag "Search" %>
+<% end %>
+</div>
+
+
+<table>
+  <!-- Table content -->
+</table>
+<p style="color: green"><%= notice %></p>
+<div id="jobs" class="text-left" style="padding:10px;">
+  <% @jobs.each do |job| %>
+    <%= render job %>
+  <% end %>
+</div>
+
+
